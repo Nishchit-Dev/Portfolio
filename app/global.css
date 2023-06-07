@@ -1,23 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-.parallex{
-    transition: 0.2s cubic-bezier(0.2,0.42,0.32,0.99);
+.parallex {
+    transition: 0.2s cubic-bezier(0.2, 0.42, 0.32, 0.99);
+}
+
+.face {
+    transition: 0.2s cubic-bezier(0.2, 0.42, 0.32, 0.99);
+
 }
 
 @media only screen and (max-width:700px) {
-  
-    .hide{
+
+    .hide {
         display: none;
     }
-    .responsive{
-        /* margin-top: 100px; */
-    }
+
 }
 
 @media only screen and (max-width:700px) {
-    .bgs{
+    .bgs {
         height: 100vh;
     }
-    
 }
 
+@media only screen and (max-width:400px) {
+    .parallex {
+
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-name: floating;
+        animation-timing-function: ease-in-out;
+
+    }
+}
+
+
+@keyframes floating {
+
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(calc(100% - 70% ));
+        transform: translateY(calc(100% - 70%));
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}

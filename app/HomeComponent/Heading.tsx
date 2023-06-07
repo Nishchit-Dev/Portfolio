@@ -166,13 +166,13 @@ const FloatingObject = () => {
           pos={"absolute"}
           w="180px"
           // top={"42%"}
-          left={["4%","36%"]} 
+          left={["4%","44%"]} 
           className="parallex "
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.19"
           data-speedy="0.17"
-          top={['20%','60%','100%']}
+          top={['20%','30%']}
         />
         <Img
           src={vscode.src}
@@ -233,7 +233,7 @@ const Content = () => {
   return (
     <Center h="100vh" p="150px 0 0 0 ">
       <Flex flexDir={"column"} align={"center"}>
-        <Img src={face.src} w="90%" zIndex={10} filter={"drop-shadow(-14px 11px 21px rgba(0, 0, 0, 0.45));"}/>
+        <Img className="face" data-speedx="0.01" data-speedy="0.02" src={face.src} w="90%" zIndex={10} filter={"drop-shadow(-14px 11px 21px rgba(0, 0, 0, 0.45));"}/>
         <Text fontWeight={"100"}  fontSize={{ base: '50px', md: '70px', lg: '90px' }}>
           Hey!!
         </Text>
@@ -269,14 +269,16 @@ export function LandingPage() {
         xValue = e.clientX - window.innerWidth / 2;
         yValue = e.clientY - window.innerHeight / 2;
 
-        console.log(xValue);
-        console.log(parallex);
-
         parallex.forEach((e:HTMLElement) => {
           let speedx:any = e.dataset.speedx;
           let speedy:any = e.dataset.speedy;
           e.style.transform = `translateX(calc(-50% - ${xValue * speedx}px)) translateY(calc(-50% - ${yValue * speedy*0.5}px))`;
         });
+
+       const face: NodeListOf<HTMLElement>  = document.querySelectorAll('.face')
+       face.forEach((e:HTMLElement)=>{
+        e.style.transform = `translateX(calc(-5% - ${0.01 * xValue}px)) translateY(calc(-5% - ${0.02 * yValue}px))`
+        })
       });
     };
     parallexEffect();
