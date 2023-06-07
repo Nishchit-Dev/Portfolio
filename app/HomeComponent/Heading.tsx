@@ -258,7 +258,7 @@ const StaticBg = () => {
 export function LandingPage() {
   useEffect(() => {
     const parallexEffect = () => {
-      const parallex = document.querySelectorAll(".parallex");
+      const parallex: NodeListOf<HTMLElement> = document.querySelectorAll('.parallex');
 
       let xValue = 0;
       let yValue = 0;
@@ -271,8 +271,8 @@ export function LandingPage() {
         console.log(parallex);
 
         parallex.forEach((e:HTMLElement) => {
-          let speedx = e.dataset.speedx;
-          let speedy = e.dataset.speedy;
+          let speedx:any = e.dataset.speedx;
+          let speedy:any = e.dataset.speedy;
           e.style.transform = `translateX(calc(-50% - ${xValue * speedx}px)) translateY(calc(-50% - ${yValue * speedy*0.5}px))`;
         });
       });
