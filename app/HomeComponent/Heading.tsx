@@ -234,10 +234,12 @@ const Content = () => {
     <Center h="100vh" p="150px 0 0 0 ">
       <Flex flexDir={"column"} align={"center"}>
         <Img className="face" data-speedx="0.01" data-speedy="0.02" src={face.src} w="90%" zIndex={10} filter={"drop-shadow(-14px 11px 21px rgba(0, 0, 0, 0.45));"}/>
-        <Text fontWeight={"100"}  fontSize={{ base: '50px', md: '70px', lg: '90px' }}>
+        <Text fontWeight={"100"}  fontSize={{ base: '50px', md: '70px', lg: '90px' }} mixBlendMode={
+          "exclusion" 
+        } color={"white"}>
           Hey!!
         </Text>
-        <Heading fontSize={{ base: '34px', md: '50px', lg: '70px' }}>Its Nishchit</Heading>
+        <Heading fontSize={{ base: '34px', md: '50px', lg: '70px' }} >Its Nishchit</Heading>
       </Flex>
     </Center>
   );
