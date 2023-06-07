@@ -263,14 +263,14 @@ export function LandingPage() {
       let xValue = 0;
       let yValue = 0;
 
-      window.addEventListener("mousemove", (e:HTMLElement) => {
+      window.addEventListener("mousemove", (e) => {
         xValue = e.clientX - window.innerWidth / 2;
         yValue = e.clientY - window.innerHeight / 2;
 
         console.log(xValue);
         console.log(parallex);
 
-        parallex.forEach((e) => {
+        parallex.forEach((e:HTMLElement) => {
           let speedx = e.dataset.speedx;
           let speedy = e.dataset.speedy;
           e.style.transform = `translateX(calc(-50% - ${xValue * speedx}px)) translateY(calc(-50% - ${yValue * speedy*0.5}px))`;
