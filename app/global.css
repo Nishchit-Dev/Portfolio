@@ -30,6 +30,7 @@
         animation-iteration-count: infinite;
         animation-name: floating;
         animation-timing-function: ease-in-out;
+        transition: 0.2s cubic-bezier(0.2, 0.42, 0.32, 0.99);
 
     }
 }
@@ -43,8 +44,8 @@
     }
 
     50% {
-        -webkit-transform: translateY(calc(100% - 70% ));
-        transform: translateY(calc(100% - 70%));
+        -webkit-transform: translateY(calc(100% - 70% )) translateX(calc(100% - 95%)) ;
+        transform: rotate(20deg) translateY(calc(100% - 70%)) translateX(calc(100% - 95%));
     }
 
     100% {
