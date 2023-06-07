@@ -37,9 +37,9 @@ const FloatingObject = () => {
       >
         <Img
           src={react.src}
-          w="250px"
+          w={['250px',"350px"]}
           pos={"absolute"}
-          top={"15%"}
+          top={["4%","15%"]}
           left={"55%"}
           className="parallex check"
           translateX={"-50%"}
@@ -51,7 +51,8 @@ const FloatingObject = () => {
           src={sol.src}
           pos={"absolute"}
           top={"70%"}
-          left={"76%"}
+          w={["100px","200px"]}
+          left={["65%","76%"]}
           className="parallex"
           translateX={"-50%"}
           translateY={"-50%"}
@@ -63,7 +64,7 @@ const FloatingObject = () => {
           pos={"absolute"}
           top={"30%"}
           left={"13%"}
-          className="parallex"
+          className="parallex hide"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.20"
@@ -74,7 +75,7 @@ const FloatingObject = () => {
           pos={"absolute"}
           top={"18%"}
           left={"80%"}
-          className="parallex"
+          className="parallex hide"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.23"
@@ -85,7 +86,7 @@ const FloatingObject = () => {
           pos={"absolute"}
           top={"80%"}
           left={"22%"}
-          className="parallex"
+          className="parallex hide"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.18"
@@ -96,7 +97,7 @@ const FloatingObject = () => {
           pos={"absolute"}
           top={"60%"}
           left={"40%"}
-          className="parallex"
+          className="parallex hide"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.15"
@@ -109,7 +110,7 @@ const FloatingObject = () => {
           pos={"absolute"}
           top={"90%"}
           left={"70%"}
-          className="parallex"
+          className="parallex hide"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.11"
@@ -118,8 +119,9 @@ const FloatingObject = () => {
         <Img
           src={js.src}
           pos={"absolute"}
-          top={"38%"}
-          left={"88%"}
+          w={["100px","220px"]}
+          top={["28%","38%"]}
+          left={["70%","88%"]}
           className="parallex"
           translateX={"-50%"}
           translateY={"-50%"}
@@ -131,10 +133,8 @@ const FloatingObject = () => {
           src={polygon2.src}
           pos={"absolute"}
           top={"7%"}
-          left={"39%"}
+          left={['10%','39%']}
           className="parallex"
-          translateX={"-50%"}
-          translateY={"-50%"}
           data-speedx="0.12"
           data-speedy="0.14"
         />
@@ -155,7 +155,7 @@ const FloatingObject = () => {
           pos={"absolute"}
           top={"24%"}
           left={"25%"}
-          className="parallex"
+          className="parallex hide"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.16"
@@ -165,20 +165,22 @@ const FloatingObject = () => {
           src={metamask.src}
           pos={"absolute"}
           w="180px"
-          top={"42%"}
-          left={"36%"}
-          className="parallex"
+          // top={"42%"}
+          left={["4%","36%"]} 
+          className="parallex "
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.19"
           data-speedy="0.17"
+          top={['20%','60%','100%']}
         />
         <Img
           src={vscode.src}
           pos={"absolute"}
-          top={"60%"}
-          left={"30%"}
-          className="parallex"
+          w={["120px","200px"]}
+          top={['80%','60%']}
+          left={["2%","30%"]}
+          className="parallex responsive"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.23"
@@ -188,11 +190,10 @@ const FloatingObject = () => {
         <Img
           src={vs.src}
           pos={"absolute"}
-          top={"40%"}
+          
+          top={['40%','60%']}
           left={"62%"}
-          className="parallex"
-          translateX={"-50%"}
-          translateY={"-50%"}
+          className="parallex responsive"
           data-speedx="0.2"
           data-speedy="0.4"
           zIndex={11}
@@ -205,7 +206,7 @@ const FloatingObject = () => {
           top={"66%"}
           left={"52%"}
           zIndex={-1}
-          className="parallex"
+          className="parallex hide"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.16"
@@ -218,7 +219,7 @@ const FloatingObject = () => {
           top={"76%"}
           left={"42%"}
           zIndex={-1}
-          className="parallex"
+          className="parallex hide"
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.16"
@@ -233,10 +234,10 @@ const Content = () => {
     <Center h="100vh" p="150px 0 0 0 ">
       <Flex flexDir={"column"} align={"center"}>
         <Img src={face.src} w="90%" zIndex={10} filter={"drop-shadow(-14px 11px 21px rgba(0, 0, 0, 0.45));"}/>
-        <Text fontWeight={"100"} fontSize={"90px"}>
+        <Text fontWeight={"100"}  fontSize={{ base: '50px', md: '70px', lg: '90px' }}>
           Hey!!
         </Text>
-        <Heading fontSize={"70px"}>Its Nishchit</Heading>
+        <Heading fontSize={{ base: '34px', md: '50px', lg: '70px' }}>Its Nishchit</Heading>
       </Flex>
     </Center>
   );
@@ -250,6 +251,7 @@ const StaticBg = () => {
         src={background.src}
         position={"fixed"}
         zIndex={"-1"}
+        className="bgs"
       />
     </>
   );
