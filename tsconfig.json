@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/products/page.tsx", "app/products/items/[slug]/page.js", "app/products/[id].js", "app/extendTheme.js", "app/extendTheme.js"],
   "exclude": ["node_modules"]
 }
