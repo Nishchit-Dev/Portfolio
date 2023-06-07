@@ -37,7 +37,7 @@ const FloatingObject = () => {
       >
         <Img
           src={react.src}
-          w="200px"
+          w="250px"
           pos={"absolute"}
           top={"15%"}
           left={"55%"}
@@ -139,6 +139,18 @@ const FloatingObject = () => {
           data-speedy="0.14"
         />
         <Img
+        w="120px"
+          src={polygon.src}
+          pos={"absolute"}
+          top={"60%"}
+          left={"9%"}
+          className="parallex"
+          translateX={"-50%"}
+          translateY={"-50%"}
+          data-speedx="0.12"
+          data-speedy="0.14"
+        />
+        <Img
           src={eth.src}
           pos={"absolute"}
           top={"24%"}
@@ -152,7 +164,7 @@ const FloatingObject = () => {
         <Img
           src={metamask.src}
           pos={"absolute"}
-          w="110px"
+          w="180px"
           top={"42%"}
           left={"36%"}
           className="parallex"
@@ -251,7 +263,7 @@ export function LandingPage() {
       let xValue = 0;
       let yValue = 0;
 
-      window.addEventListener("mousemove", (e) => {
+      window.addEventListener("mousemove", (e:HTMLElement) => {
         xValue = e.clientX - window.innerWidth / 2;
         yValue = e.clientY - window.innerHeight / 2;
 
