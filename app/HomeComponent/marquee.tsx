@@ -1,7 +1,7 @@
 "use client"
 import { Box, Flex,Heading,Text } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
-export default function w() {
+export default function Skill_Marquee() {
   return (
     <Box  bg={"black"}>
         <Marquee>

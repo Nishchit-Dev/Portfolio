@@ -25,6 +25,8 @@ import figma from "../resources/icons/Frame 10.png";
 
 
 import { useEffect} from "react";
+import Skill_Marquee from "./marquee";
+import Colloab from "./ColloborationSection";
 
 const FloatingObject = () => {
   return (
@@ -245,7 +247,7 @@ const Content = () => {
   );
 };
 
-const StaticBg = () => {
+export const StaticBg = () => {
   return (
     <>
       <Img
@@ -258,6 +260,17 @@ const StaticBg = () => {
     </>
   );
 };
+export const Develop_with_love_by_developer = ()=>{
+  return (
+      <>
+          <Center w="100%" bg="black" p="2px 0" >
+              <Text color={"white"} fontWeight={"medium"}>
+                  Developed with ❤️ by Developer
+              </Text>
+          </Center>
+      </>
+  )
+}
 
 export function LandingPage() {
   useEffect(() => {
@@ -291,6 +304,9 @@ export function LandingPage() {
       <Box h="100vh" bg={background.src}>
         <FloatingObject />
       </Box>
+      <Skill_Marquee/>
+      <Colloab/>
+      <Develop_with_love_by_developer/>
     </>
   );
 }
