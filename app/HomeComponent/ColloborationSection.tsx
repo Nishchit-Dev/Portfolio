@@ -14,7 +14,7 @@ export default function Colloab (){
                         Collaboration
                     </Text>
                     <Heading >
-                        Let's talk to 
+                        Let's talk to
                     </Heading>
                     <Text  fontSize={{ base: '34px', md: '50px', lg: '70px' }} fontWeight={"900"}>Collaborate</Text>
                     </Flex>

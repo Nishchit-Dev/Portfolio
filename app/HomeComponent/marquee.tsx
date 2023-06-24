@@ -18,25 +18,25 @@ export default function Skill_Marquee() {
                 <Heading>UI/UX design</Heading>
               </Box>
               <Box>
-                <Heading>`&#183;`</Heading>
+                <Heading>&#183;</Heading>
               </Box>
               <Box>
                 <Heading>Front-End</Heading>
               </Box>
               <Box>
-                <Heading>`&#183;`</Heading>
+                <Heading>&#183;</Heading>
               </Box>
               <Box>
                 <Heading>Back-End</Heading>
               </Box>
               <Box>
-                <Heading>`&#183;`</Heading>
+                <Heading>&#183;</Heading>
               </Box>
               <Box>
                 <Heading>Blockchain</Heading>
               </Box>
               <Box>
-                <Heading>`&#183;`</Heading>
+                <Heading>&#183;</Heading>
               </Box>
               <Box>
                 <Heading>Solidity</Heading>
@@ -62,25 +62,25 @@ export default function Skill_Marquee() {
                 <Heading>UI/UX design</Heading>
               </Box>
               <Box>
-                <Heading>`&#183;`</Heading>
+                <Heading>&#183;</Heading>
               </Box>
               <Box>
                 <Heading>Front-End</Heading>
               </Box>
               <Box>
-                <Heading>`&#183;`</Heading>
+                <Heading>&#183;</Heading>
               </Box>
               <Box>
                 <Heading>Back-End</Heading>
               </Box>
               <Box>
-                <Heading>`&#183;`</Heading>
+                <Heading>&#183;</Heading>
               </Box>
               <Box>
                 <Heading>Blockchain</Heading>
               </Box>
               <Box>
-                <Heading>`&#183;`</Heading>
+                <Heading>&#183;</Heading>
               </Box>
               <Box>
                 <Heading>Solidity</Heading>
