@@ -65,13 +65,25 @@ export default function Skill_Marquee() {
                 <Heading>&#183;</Heading>
               </Box>
               <Box>
-                <Heading>Front-End</Heading>
+                <Heading>React.js</Heading>
               </Box>
               <Box>
                 <Heading>&#183;</Heading>
               </Box>
               <Box>
-                <Heading>Back-End</Heading>
+                <Heading>Typescript</Heading>
+              </Box>
+              <Box>
+                <Heading>&#183;</Heading>
+              </Box>
+              <Box>
+                <Heading>Next.js</Heading>
+              </Box>
+              <Box>
+                <Heading>&#183;</Heading>
+              </Box>
+              <Box>
+                <Heading>Javascript</Heading>
               </Box>
               <Box>
                 <Heading>&#183;</Heading>

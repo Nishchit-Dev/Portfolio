@@ -1,25 +1,85 @@
-'use client'
+"use client";
 
-import { Box, Center, Container,Text,Flex, Heading } from "@chakra-ui/react"
-import { StaticBg } from "./Heading"
+import {
+  Box,
+  Center,
+  Container,
+  Text,
+  Flex,
+  Img,
+  Heading,
+  Button,
+  Icon,
+  IconButton,
+} from "@chakra-ui/react";
+import discord from "../resources/icons/discord.png";
+import twitter from "../resources/icons/twitter.png";
+import hashnode from "../resources/icons/hashnode.png";
+import { StaticBg } from "./Heading";
 
-export default function Colloab (){
-    return(<>
-        <Box  h='75vh'>
-            <StaticBg/>
-                <Center h={"inherit"}>
-                    <Flex direction={"column"} align={"center"}>
-
-                    <Text fontWeight={"light"} m="30px">
-                        Collaboration
-                    </Text>
-                    <Heading >
-                        Let's talk to
-                    </Heading>
-                    <Text  fontSize={{ base: '34px', md: '50px', lg: '70px' }} fontWeight={"900"}>Collaborate</Text>
-                    </Flex>
-                </Center>
-
-        </Box>
-    </>)
+export default function Colloab() {
+  return (
+    <>
+      <Box h="75vh">
+        <StaticBg />
+        <Center h={"inherit"}>
+          <Flex direction={"column"} align={"center"}>
+            <Heading>Let's talk to</Heading>
+            <Text
+              fontSize={{ base: "34px", md: "50px", lg: "70px" }}
+              fontWeight={"900"}
+            >
+              Collaborate
+            </Text>
+            <Button
+              _hover={{ opacity: 1 }}
+              opacity={"0.8"}
+              background={"blackAlpha.600"}
+              color={"white"}
+            >
+              Collaborate 🤝
+            </Button>
+            <Flex m="40px 0" direction={"column"}>
+              <Center>
+                <Heading fontWeight={"extrabold"} size={"xl"}>
+                  Wanna Connect ?{" "}
+                </Heading>
+              </Center>
+              <Center m="10px 0">
+                <Flex gap={"10px"}>
+                  <Button
+                    leftIcon={<Img src={twitter.src} width={"35px"} />}
+                    _hover={{ opacity: 1, bg: "white", color: "black" }}
+                    opacity={"0.8"}
+                    color={"white"}
+                    background={"blackAlpha.600"}
+                  >
+                    Twitter
+                  </Button>
+                  <Button
+                    leftIcon={<Img src={discord.src} width={"35px"} />}
+                    color={"white"}
+                    _hover={{ opacity: 1, bg: "white", color: "black" }}
+                    opacity={"0.8"}
+                    background={"blackAlpha.600"}
+                  >
+                    Discord
+                  </Button>
+                  <Button
+                    leftIcon={<Img src={hashnode.src} width={"35px"} />}
+                    color={"white"}
+                    _hover={{ opacity: 1, bg: "white", color: "black" }}
+                    opacity={"0.8"}
+                    background={"blackAlpha.600"}
+                  >
+                    Hashnode
+                  </Button>
+                </Flex>
+              </Center>
+            </Flex>
+          </Flex>
+        </Center>
+      </Box>
+    </>
+  );
 }
