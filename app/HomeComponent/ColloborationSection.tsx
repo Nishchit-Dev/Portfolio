@@ -41,12 +41,12 @@ export default function Colloab() {
             </Button>
             <Flex m="40px 0" direction={"column"}>
               <Center>
-                <Heading fontWeight={"extrabold"} size={"xl"}>
+                <Text fontWeight={"thin"} fontSize={"4xl"}>
                   Wanna Connect ?{" "}
-                </Heading>
+                </Text>
               </Center>
               <Center m="10px 0">
-                <Flex gap={"10px"}>
+                <Flex gap={"10px"} direction={{base:"column",lg:'row'}}>
                   <Button
                     leftIcon={<Img src={twitter.src} width={"35px"} />}
                     _hover={{ opacity: 1, bg: "white", color: "black" }}
