@@ -5,7 +5,7 @@ import { StaticBg } from "./Heading"
 
 export default function Colloab (){
     return(<>
-        <Box  h='93vh'>
+        <Box  h='75vh'>
             <StaticBg/>
                 <Center h={"inherit"}>
                     <Flex direction={"column"} align={"center"}>
