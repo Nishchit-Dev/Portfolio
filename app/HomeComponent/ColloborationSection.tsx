@@ -25,6 +25,7 @@ export default function Colloab() {
         <Center h={"inherit"}>
           <Flex direction={"column"} align={"center"}>
             <Heading>Let's talk to</Heading>
+           
             <Text
               fontSize={{ base: "34px", md: "50px", lg: "70px" }}
               fontWeight={"900"}
@@ -46,7 +47,7 @@ export default function Colloab() {
                 </Text>
               </Center>
               <Center m="10px 0">
-                <Flex gap={"10px"} direction={{base:"column",lg:'row'}}>
+                <Flex gap={"10px"} direction={{ base: "column", lg: "row" }}>
                   <Button
                     leftIcon={<Img src={twitter.src} width={"35px"} />}
                     _hover={{ opacity: 1, bg: "white", color: "black" }}
