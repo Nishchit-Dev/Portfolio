@@ -44,7 +44,7 @@ export const BlogCard = ( {singlePost}:any )=> {
       <Flex m="7px 0 " align={"center"} gap={"10px"}>
         <Avatar size={"sm"} src="https://cdn.hashnode.com/res/hashnode/image/upload/v1685809351045/sJoOjA_bF.jpg"/>
         <Flex flexDirection={"column"}>
-        <Text fontSize={"14px"}>0xNishchit</Text>
+        <Text fontSize={"12px"}>0xNishchit</Text>
         <Text fontSize={"12px"}>{StringDate}</Text>
         </Flex>
        

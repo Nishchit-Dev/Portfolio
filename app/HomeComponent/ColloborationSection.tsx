@@ -54,6 +54,7 @@ export default function Colloab() {
                     opacity={"0.8"}
                     color={"white"}
                     background={"blackAlpha.600"}
+                    onClick={()=>{window.open("https://twitter.com/0xNishchit","_blank")}}
                   >
                     Twitter
                   </Button>
