@@ -16,18 +16,20 @@ export default function Blogs() {
   const [data, setData] = useState<any>([]);
   const post: any = useFetchBlog();
 
-  console.log("test");
-  console.log(post);
+  // console.log("test");
+  // console.log(post);
 
   // here we have check if the array is filled with post then will set the data
   useEffect(() => {
-    if(post.length > 0 ){
+    if (post.length != 0) {
       setData(post);
     }
   }, [post]);
 
   return (
     <>
+    <Box h="102vh">
+
       <Center>
         <Box>
           <Heading>Read My Tech blog</Heading>
@@ -37,32 +39,53 @@ export default function Blogs() {
         </Box>
       </Center>
       <Center>
-        <Marquee >
-        <Flex
-          flexDir={"row"}
-          gap={"40px"}
-          p={"50px"}
-          flexWrap={"wrap"}
-          align={"center"}
-          justify={"center"}
-        >
+        <Flex flexDirection={"column"} minW={"330px"}>
 
-          {post.length > 0
-            ? data.map((ele: any, index: number) => {
-                console.log(ele);
-                return <BlogCard singlePost={ele} key={index}/>;
-                // return <h1 key={index}>hello</h1>
-              })
-            : ""}
+        <Marquee>
+          <Flex
+            flexDir={"row"}
+            gap={"40px"}
+            p={"15px"}
+            flexWrap={"wrap"}
+            align={"center"}
+            justify={"center"}
+          >
+            {post.length > 0
+              ? data.map((ele: any, index: number) => {
+                  return <BlogCard singlePost={ele} key={index} />;
+                  // return <h1 key={index}>hello</h1>
+                })
+              : ""}
+          </Flex>
+        </Marquee>
+        <Marquee direction={"right"}>
+          <Flex
+            flexDir={"row"}
+            gap={"40px"}
+            p={"15px"}
+            flexWrap={"wrap"}
+            align={"center"}
+            justify={"center"}
+          >
+            {post.length > 0
+              ? data.map((ele: any, index: number) => {
+                  return <BlogCard singlePost={ele} key={index} />;
+                  // return <h1 key={index}>hello</h1>
+                })
+              : ""}
+          </Flex>
+        </Marquee>
         </Flex>
-            </Marquee>
+
       </Center>
+    </Box>
+
     </>
   );
 }
 
 export const BlogCard = ({ singlePost }: any) => {
-  console.log("#2 ", singlePost);
+
   const handleClick = () => {
     let link = "https://0xnishchit.hashnode.dev/" + singlePost.slug;
     window.open(link, "_blank");
@@ -74,11 +97,10 @@ export const BlogCard = ({ singlePost }: any) => {
     <Box
       w="225px"
       bg="whiteAlpha.400"
-      p="15px"
+      p="20px 15px"
       onClick={handleClick}
       cursor={"pointer"}
-      _hover={{ bg: "white", transition: "0.4s",transform:"scale(1.1)" }}
-      
+      _hover={{ bg: "white", transition: "0.4s", transform: "scale(1.1)" }}
     >
       <Box>
         <Flex flexDirection="column" gap="5px">
