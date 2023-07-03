@@ -15,7 +15,8 @@ import {
 export default function Blogs() {
   const [data, setData] = useState<any>([]);
   const post: any = useFetchBlog();
-
+  let dataSetOne = post.length >0 ? data.sort(()=>Math.random() - 0.5) : "" ;
+  let dataSetTwo = post.length >0 ? data.sort(()=>Math.random() - 0.5) : "" ;
   // console.log("test");
   // console.log(post);
 
@@ -52,10 +53,10 @@ export default function Blogs() {
             justify={"center"}
           >
             {post.length > 0
-              ? data.map((ele: any, index: number) => {
+              ? dataSetOne.map((ele: any, index: number) => {
                   return <BlogCard singlePost={ele} key={index} />;
                   // return <h1 key={index}>hello</h1>
-                })
+                }).sort(()=>Math.random() - 0.5)
               : ""}
           </Flex>
         </Marquee>
@@ -69,7 +70,7 @@ export default function Blogs() {
             justify={"center"}
           >
             {post.length > 0
-              ? data.map((ele: any, index: number) => {
+              ? dataSetTwo.map((ele: any, index: number) => {
                   return <BlogCard singlePost={ele} key={index} />;
                   // return <h1 key={index}>hello</h1>
                 })
