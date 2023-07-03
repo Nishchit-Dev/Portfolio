@@ -14,14 +14,16 @@ import {
 export default function Blogs() {
   const [data, setData] = useState<any>([]);
   const post: any = useFetchBlog();
+
   console.log("test");
   console.log(post);
+
+  // here we have check if the array is filled with post then will set the data
   useEffect(() => {
-    if (post.length > 0) {
+    if(post.length > 0 ){
       setData(post);
-      console.log(post.data);
     }
-  }, []);
+  }, [post]);
 
   return (
     <>
@@ -42,10 +44,13 @@ export default function Blogs() {
           align={"center"}
           justify={"center"}
         >
-          {post.length > 0 ? data.map((ele: any, index: number) => {
-            console.log(ele);
-            return <BlogCard singlePost={ele} />
-          }):""}
+          {post.length > 0
+            ? data.map((ele: any, index: number) => {
+                console.log(ele);
+                return <BlogCard singlePost={ele} key={index}/>;
+                // return <h1 key={index}>hello</h1>
+              })
+            : ""}
         </Flex>
       </Center>
     </>
