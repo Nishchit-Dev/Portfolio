@@ -15,7 +15,7 @@ import {
 import discord from "../resources/icons/discord.png";
 import twitter from "../resources/icons/twitter.png";
 import hashnode from "../resources/icons/hashnode.png";
-import { StaticBg } from "./Heading";
+import { StaticBg } from "./LandingPage";
 
 export default function Colloab() {
   return (

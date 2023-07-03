@@ -22,14 +22,43 @@ import vscode from "../resources/icons/VSCode.png";
 import ubuntu from "../resources/icons/Frame 9.png";
 import figma from "../resources/icons/Frame 10.png";
 
-import { useEffect } from "react";
-import Skill_Marquee, { BlogMarquee } from "./marquee";
+
+
+import { useEffect} from "react";
+import Skill_Marquee from "./marquee";
 import Colloab from "./ColloborationSection";
-import ShowLanuches from "../blog/Blog";
-import FetchBlog from "../blog/page";
-import Marquee from "react-fast-marquee";
+import Blogs from "./Blog";
 
 const FloatingObject = () => {
+  useEffect(() => {
+    const parallexEffect = () => {
+      const parallex: NodeListOf<HTMLElement> = document.querySelectorAll('.parallex');
+
+      let xValue = 0;
+      let yValue = 0;
+
+      window.addEventListener("mousemove", (e) => {
+        xValue = e.clientX - window.innerWidth / 2;
+        yValue = e.clientY - window.innerHeight / 2;
+
+        parallex.forEach((e:HTMLElement) => {
+          let speedx:any = e.dataset.speedx;
+          let speedy:any = e.dataset.speedy;
+          e.style.transform = `translateX(calc(-50% - ${xValue * speedx}px)) translateY(calc(-50% - ${yValue * speedy*0.5}px))`;
+        });
+
+       const face: NodeListOf<HTMLElement>  = document.querySelectorAll('.face')
+       face.forEach((e:HTMLElement)=>{
+        e.style.transform = `translateX(calc(-5% - ${0.01 * xValue}px)) translateY(calc(-5% - ${0.02 * yValue}px))`
+        })
+      });
+    };
+    
+    parallexEffect();
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
+  }, []);
   return (
     <>
       <Box
@@ -40,9 +69,9 @@ const FloatingObject = () => {
       >
         <Img
           src={react.src}
-          w={["250px", "350px"]}
+          w={['250px',"350px"]}
           pos={"absolute"}
-          top={["4%", "15%"]}
+          top={["4%","15%"]}
           left={"55%"}
           className="parallex check"
           translateX={"-50%"}
@@ -54,8 +83,8 @@ const FloatingObject = () => {
           src={sol.src}
           pos={"absolute"}
           top={"70%"}
-          w={["100px", "200px"]}
-          left={["65%", "76%"]}
+          w={["100px","200px"]}
+          left={["65%","76%"]}
           className="parallex"
           translateX={"-50%"}
           translateY={"-50%"}
@@ -122,9 +151,9 @@ const FloatingObject = () => {
         <Img
           src={js.src}
           pos={"absolute"}
-          w={["100px", "220px"]}
-          top={["28%", "38%"]}
-          left={["70%", "88%"]}
+          w={["100px","220px"]}
+          top={["28%","38%"]}
+          left={["70%","88%"]}
           className="parallex"
           translateX={"-50%"}
           translateY={"-50%"}
@@ -136,13 +165,13 @@ const FloatingObject = () => {
           src={polygon2.src}
           pos={"absolute"}
           top={"7%"}
-          left={["10%", "39%"]}
+          left={['10%','39%']}
           className="parallex"
           data-speedx="0.12"
           data-speedy="0.14"
         />
         <Img
-          w="120px"
+        w="120px"
           src={polygon.src}
           pos={"absolute"}
           top={"60%"}
@@ -169,20 +198,20 @@ const FloatingObject = () => {
           pos={"absolute"}
           w="180px"
           // top={"42%"}
-          left={["4%", "44%"]}
+          left={["4%","44%"]} 
           className="parallex "
           translateX={"-50%"}
           translateY={"-50%"}
           data-speedx="0.19"
           data-speedy="0.17"
-          top={["20%", "30%"]}
+          top={['20%','30%']}
         />
         <Img
           src={vscode.src}
           pos={"absolute"}
-          w={["120px", "200px"]}
-          top={["80%", "60%"]}
-          left={["2%", "30%"]}
+          w={["120px","200px"]}
+          top={['80%','60%']}
+          left={["2%","30%"]}
           className="parallex responsive"
           translateX={"-50%"}
           translateY={"-50%"}
@@ -193,14 +222,16 @@ const FloatingObject = () => {
         <Img
           src={vs.src}
           pos={"absolute"}
-          top={["40%", "60%"]}
+          
+          top={['40%','60%']}
           left={"62%"}
           className="parallex responsive"
           data-speedx="0.2"
           data-speedy="0.4"
           zIndex={11}
+
         />
-        <Img
+         <Img
           src={ubuntu.src}
           pos={"absolute"}
           w="120px"
@@ -213,7 +244,7 @@ const FloatingObject = () => {
           data-speedx="0.16"
           data-speedy="0.18"
         />
-        <Img
+         <Img
           src={figma.src}
           pos={"absolute"}
           w="120px"
@@ -234,26 +265,13 @@ const Content = () => {
   return (
     <Center h="100vh" p="150px 0 0 0 ">
       <Flex flexDir={"column"} align={"center"}>
-        <Img
-          className="face"
-          data-speedx="0.01"
-          data-speedy="0.02"
-          src={face.src}
-          w="90%"
-          zIndex={10}
-          filter={"drop-shadow(-14px 11px 21px rgba(0, 0, 0, 0.45));"}
-        />
-        <Text
-          fontWeight={"100"}
-          fontSize={{ base: "50px", md: "70px", lg: "90px" }}
-          mixBlendMode={"exclusion"}
-          color={"white"}
-        >
+        <Img className="face" data-speedx="0.01" data-speedy="0.02" src={face.src} w="90%" zIndex={10} filter={"drop-shadow(-14px 11px 21px rgba(0, 0, 0, 0.45));"}/>
+        <Text fontWeight={"100"}  fontSize={{ base: '50px', md: '70px', lg: '90px' }} mixBlendMode={
+          "exclusion" 
+        } color={"white"}>
           Hey!!
         </Text>
-        <Heading fontSize={{ base: "34px", md: "50px", lg: "70px" }}>
-          Its Nishchit
-        </Heading>
+        <Heading fontSize={{ base: '34px', md: '50px', lg: '70px' }} >Its Nishchit</Heading>
       </Flex>
     </Center>
   );
@@ -272,60 +290,31 @@ export const StaticBg = () => {
     </>
   );
 };
-export const Develop_with_love_by_developer = () => {
+export const Develop_with_love_by_developer = ()=>{
   return (
-    <>
-      <Center w="100%" bg="black" p="2px 0">
-        <Text color={"white"} fontWeight={"medium"}>
-          Developed with ❤️ by Developer
-        </Text>
-      </Center>
-    </>
-  );
-};
+      <>
+          <Center w="100%" bg="black" p="2px 0" >
+              <Text color={"white"} fontWeight={"medium"}>
+                  Developed with ❤️ by Developer
+              </Text>
+          </Center>
+      </>
+  )
+}
 
 export function LandingPage() {
-  useEffect(() => {
-    const parallexEffect = () => {
-      const parallex: NodeListOf<HTMLElement> =
-        document.querySelectorAll(".parallex");
 
-      let xValue = 0;
-      let yValue = 0;
-
-      window.addEventListener("mousemove", (e) => {
-        xValue = e.clientX - window.innerWidth / 2;
-        yValue = e.clientY - window.innerHeight / 2;
-
-        parallex.forEach((e: HTMLElement) => {
-          let speedx: any = e.dataset.speedx;
-          let speedy: any = e.dataset.speedy;
-          e.style.transform = `translateX(calc(-50% - ${
-            xValue * speedx
-          }px)) translateY(calc(-50% - ${yValue * speedy * 0.5}px))`;
-        });
-
-        const face: NodeListOf<HTMLElement> =
-          document.querySelectorAll(".face");
-        face.forEach((e: HTMLElement) => {
-          e.style.transform = `translateX(calc(-5% - ${
-            0.01 * xValue
-          }px)) translateY(calc(-5% - ${0.02 * yValue}px))`;
-        });
-      });
-    };
-    parallexEffect();
-  }, []);
+  console.log("test")
   return (
     <>
       <StaticBg />
       <Box h="100vh" bg={background.src}>
         <FloatingObject />
       </Box>
-      <Skill_Marquee />
-      <Colloab />
-      <FetchBlog />
-      <Develop_with_love_by_developer />
+      <Skill_Marquee/>
+      <Colloab/>
+      <Blogs/>
+      <Develop_with_love_by_developer/>
     </>
   );
 }

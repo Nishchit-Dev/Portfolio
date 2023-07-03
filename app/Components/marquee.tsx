@@ -1,7 +1,6 @@
 "use client";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
-import FetchBlog from "../blog/page";
 export default function Skill_Marquee() {
   return (
     <>
@@ -104,23 +103,4 @@ export default function Skill_Marquee() {
       </Box>
     </>
   );
-}
-
-export const BlogMarquee = ()=>{
-
-return (
-  <Box position={"sticky"} p="70px 0" overflow={"clip"}>
-  <Box
-    // bg={"black"}
-    // style={{ rotate: "2deg" }}
-    // position={"absolute"}
-    // transform={"translateX(-15px)"}
-    // w="110%"
-  >
-    <Marquee>
-      <FetchBlog/>
-    </Marquee>
-  </Box>
-  </Box>
-)
 }
