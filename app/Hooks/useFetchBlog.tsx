@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useFetchBlog = () => {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<any>([]);
   const query = `{
         user(username: "0xNishchit") {
           _id
@@ -22,7 +22,7 @@ export const useFetchBlog = () => {
 
   useEffect(() => {
     (async function () {
-      const res = await fetch(Url, {
+      const res = await  fetch(Url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,8 +32,8 @@ export const useFetchBlog = () => {
         }),
       })
 
-      console.log(res)
-      setData(res.json())
+      // console.log((await res.json()).data.user.publication.posts)
+      setData((await res.json()).data.user.publication.posts)
     })();
   }, []);
 
