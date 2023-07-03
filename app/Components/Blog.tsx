@@ -1,4 +1,5 @@
 "use client";
+import Marquee from "react-fast-marquee";
 
 import { useEffect, useState } from "react";
 import { useFetchBlog } from "../Hooks/useFetchBlog";
@@ -36,6 +37,7 @@ export default function Blogs() {
         </Box>
       </Center>
       <Center>
+        <Marquee >
         <Flex
           flexDir={"row"}
           gap={"40px"}
@@ -44,6 +46,7 @@ export default function Blogs() {
           align={"center"}
           justify={"center"}
         >
+
           {post.length > 0
             ? data.map((ele: any, index: number) => {
                 console.log(ele);
@@ -52,6 +55,7 @@ export default function Blogs() {
               })
             : ""}
         </Flex>
+            </Marquee>
       </Center>
     </>
   );
@@ -70,10 +74,11 @@ export const BlogCard = ({ singlePost }: any) => {
     <Box
       w="225px"
       bg="whiteAlpha.400"
-      p="13px"
+      p="15px"
       onClick={handleClick}
       cursor={"pointer"}
-      _hover={{ bg: "white", transition: "0.4s" }}
+      _hover={{ bg: "white", transition: "0.4s",transform:"scale(1.1)" }}
+      
     >
       <Box>
         <Flex flexDirection="column" gap="5px">
