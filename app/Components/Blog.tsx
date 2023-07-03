@@ -28,15 +28,16 @@ export default function Blogs() {
 
   return (
     <>
-    <Box h="102vh">
+    <Box>
 
       <Center>
-        <Box>
-          <Heading>Read My Tech blog</Heading>
+        <Flex flexDir="column" align={"center"}>
+       
+          <Heading >Read My Tech blog</Heading>
           <Center>
-            <Text>Wanna Vist my Hashnode Profile ? </Text>
+            <Text p="15px" wordBreak={"break-all"}>Let's read whats happening in the tech-world and learn something together!!!</Text>
           </Center>
-        </Box>
+        </Flex>
       </Center>
       <Center>
         <Flex flexDirection={"column"} minW={"330px"}>

@@ -19,7 +19,7 @@ import github from "../resources/icons/github.png"
 import { StaticBg } from "./LandingPage";
 import linkedIn from '../resources/icons/linkedin.png'
 
-export default function Colloab() {
+export default function Collaboration() {
   return (
     <>
       <Box h="75vh">

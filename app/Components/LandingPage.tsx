@@ -21,13 +21,14 @@ import metamask from "../resources/icons/Group 3.png";
 import vscode from "../resources/icons/VSCode.png";
 import ubuntu from "../resources/icons/Frame 9.png";
 import figma from "../resources/icons/Frame 10.png";
-
+import Scroll from '../resources/gif/anime1.gif'
 
 
 import { useEffect} from "react";
-import Skill_Marquee from "./marquee";
-import Colloab from "./ColloborationSection";
+import SkillMarquee from "./marquee";
+import Collaboration from "./ColloborationSection";
 import Blogs from "./Blog";
+import ScrollAnimation from "./LottieAnimation";
 
 const FloatingObject = () => {
   useEffect(() => {
@@ -137,17 +138,6 @@ const FloatingObject = () => {
         />
         <Content></Content>
 
-        <Img
-          src={ts.src}
-          pos={"absolute"}
-          top={"90%"}
-          left={"70%"}
-          className="parallex hide"
-          translateX={"-50%"}
-          translateY={"-50%"}
-          data-speedx="0.11"
-          data-speedy="0.3"
-        />
         <Img
           src={js.src}
           pos={"absolute"}
@@ -271,7 +261,8 @@ const Content = () => {
         } color={"white"}>
           Hey!!
         </Text>
-        <Heading fontSize={{ base: '34px', md: '50px', lg: '70px' }} >Its Nishchit</Heading>
+        <Heading fontSize={{ base: '34px', md: '50px', lg: '70px' }} ></Heading>
+        <Center width={"100px"} position={"sticky"} top="50%"><ScrollAnimation /></Center>
       </Flex>
     </Center>
   );
@@ -290,7 +281,7 @@ export const StaticBg = () => {
     </>
   );
 };
-export const Develop_with_love_by_developer = ()=>{
+export const DeveloperQuote = ()=>{
   return (
       <>
           <Center w="100%" bg="black" p="2px 0" >
@@ -311,10 +302,10 @@ export function LandingPage() {
       <Box h="100vh" bg={background.src}>
         <FloatingObject />
       </Box>
-      <Skill_Marquee/>
-      <Colloab/>
+      <SkillMarquee/>
+      <Collaboration/>
       <Blogs/>
-      <Develop_with_love_by_developer/>
+      <DeveloperQuote/>
     </>
   );
 }
