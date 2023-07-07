@@ -17,12 +17,10 @@ export default function Blogs() {
   const post: any = useFetchBlog();
   let dataSetOne = post.length >0 ? data.sort(()=>Math.random() - 0.5) : "" ;
   let dataSetTwo = post.length >0 ? data.sort(()=>Math.random() - 0.5) : "" ;
-  // console.log("test");
-  // console.log(post);
 
   // here we have check if the array is filled with post then will set the data
   useEffect(() => {
-    if (post.length != 0) {
+    if (post.length > 0) {
       setData(post);
     }
   }, [post]);
@@ -56,7 +54,7 @@ export default function Blogs() {
               ? dataSetOne.map((ele: any, index: number) => {
                   return <BlogCard singlePost={ele} key={index} />;
                   // return <h1 key={index}>hello</h1>
-                }).sort(()=>Math.random() - 0.5)
+                })
               : ""}
           </Flex>
         </Marquee>

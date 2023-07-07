@@ -30,6 +30,7 @@ export const useFetchTotalPost = () => {
   return data;
 };
 export const useFetchBlog = () => {
+  const [status, setStatus] = useState(false);
   const [data, setData] = useState<any[]>([]);
   const Dquery = (page: number = 0) => {
     return `{
@@ -62,8 +63,11 @@ export const useFetchBlog = () => {
   let numberPost: number = CountPostPage();
 
   useEffect(() => {
+    if (status) {
+      return;
+    }
     (async function () {
-     
+      let responseData: Object[] = [];
       console.log(numberPost);
       for (let i = 0; i < numberPost; i++) {
         let query = Dquery(i);
@@ -76,18 +80,17 @@ export const useFetchBlog = () => {
             query: query,
           }),
         });
-        // let newData = (await res.json()).data.user.publication.posts ;
-        // setData(async(prevData:any)=>[...prevData,newData]);
-        const responseData = (await res.json()).data.user.publication.posts;
-        setData((prevData) => {
-          const newData = Array.isArray(prevData) ? [...prevData] : [];
-          return [...newData, ...responseData];
-        });
-      }
-      
 
-      // console.log((await res.json()).data.user.publication.posts)
-    })();
+        const moreData = (await res.json()).data.user.publication.posts;
+        responseData = [...responseData, ...moreData];
+
+        if (i == numberPost - 1) {
+          return responseData;
+        }
+      }
+    })().then((res: any) => {
+      setData(res || []);
+    });
   }, [numberPost]);
 
   return data;
