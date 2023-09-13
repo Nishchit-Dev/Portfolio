@@ -12,34 +12,33 @@ export default function ResumeHeader() {
   return (
     <>
       <Box h="25px">
-        <Flex
-          justifyContent={"center"}
-          alignItems={"center"}
-          gap={"10px"}
-          p="8px 0 0 0 "
+        <Center
+          p={"10px 0 0 0 "}
+          
         >
-          <Center
+          <Flex
+            justifyContent={"center"}
+            alignItems={"center"}
+            gap={"10px"}
             cursor={"pointer"}
             bg="white"
+            w="min-content"
             p="10px 25px"
-            borderRadius={"999px"}
-            gap={"10px"}
-          >
-            <Text
-              textAlign={"center"}
-              onClick={() => {
+           zIndex={"9999"}
+            m="5px"
+            borderRadius={"9999px"}
+            onClick={() => {
                 window.open(
                   "https://drive.google.com/drive/folders/1ljj7S2ZzhOtKNAfHSkt4f4CDL_eRpZyF?usp=sharing",
                   "_blank"
                 );
               }}
-            >
-              Resume
-            </Text>
+          >
+            <Text>Resume</Text>
 
             <ExternalLinkIcon color="black" />
-          </Center>
-        </Flex>
+          </Flex>
+        </Center>
       </Box>
     </>
   );
