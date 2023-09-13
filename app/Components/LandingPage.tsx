@@ -263,7 +263,10 @@ const Content = () => {
           Hey!!
         </Text>
         <Heading fontSize={{ base: '34px', md: '50px', lg: '70px' }} ></Heading>
-        <Center width={"100px"} position={"sticky"} top="50%"><ScrollAnimation /></Center>
+        <Center width={"100px"} position={"sticky"} top="50%" opacity={"0.3"}>
+          <ScrollAnimation />
+         
+          </Center>
       </Flex>
     </Center>
   );
