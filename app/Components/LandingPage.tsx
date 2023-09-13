@@ -29,6 +29,7 @@ import SkillMarquee from "./marquee";
 import Collaboration from "./ColloborationSection";
 import Blogs from "./Blog";
 import ScrollAnimation from "./LottieAnimation";
+import ResumeHeader from "./HeaderResume";
 
 const FloatingObject = () => {
   useEffect(() => {
@@ -299,6 +300,7 @@ export function LandingPage() {
   return (
     <>
       <StaticBg />
+    <ResumeHeader/>
       <Box h="100vh" bg={background.src}>
         <FloatingObject />
       </Box>
