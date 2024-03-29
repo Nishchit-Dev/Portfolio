@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 
 export const useFetchTotalPost = () => {
   const [data, setData] = useState(0);
-  const Url = "https://api.hashnode.com/graphql";
+  const Url = "https://gql.hashnode.com/";
   const query = `{
     user(username: "0xNishchit") {
-        _id
-        numPosts
+        id
+        posts(pageSize: 0, page: 1) {
+          totalDocuments
+        }
       }
     }`;
 
@@ -22,8 +24,8 @@ export const useFetchTotalPost = () => {
         }),
       });
 
-      // console.log((await res.json()).data.user.publication.posts)
-      setData((await res.json()).data.user.numPosts);
+      // console.log((await res.json()).data.user.posts.totalDocuments)
+      setData((await res.json()).data.user.posts.totalDocuments);
     })();
   }, []);
 
@@ -34,23 +36,31 @@ export const useFetchBlog = () => {
   const [data, setData] = useState<any[]>([]);
   const Dquery = (page: number = 0) => {
     return `{
-        user(username: "0xNishchit") {
-          _id
-          publication {
-            title
-            posts(page: ${page}) {
-              _id
-              title
-              coverImage
-              dateAdded
-              brief
-              slug
+        publication(id: "64574d4030be1a2397aa5cb5") {
+          id
+          title
+          displayTitle
+          url
+          canonicalURL
+          posts(first: 10) {
+            totalDocuments
+            edges {
+                node {
+                    id
+                    slug
+                    title
+                    url
+                    brief
+                    publishedAt
+                    coverImage {
+                        url
+                    }
+                }
             }
-          }
-        }
+      }
       }`;
   };
-  const Url = "https://api.hashnode.com/graphql";
+  const Url = "https://gql.hashnode.com/";
 
   const CountPostPage = (): number => {
     let num: number = useFetchTotalPost();
@@ -81,8 +91,9 @@ export const useFetchBlog = () => {
           }),
         });
 
-        const moreData = (await res.json()).data.user.publication.posts;
-        responseData = [...responseData, ...moreData];
+        const moreData = (await res.json());
+        console.log(moreData);
+        // responseData = [...responseData, ...moreData];
 
         if (i == numberPost - 1) {
           return responseData;
